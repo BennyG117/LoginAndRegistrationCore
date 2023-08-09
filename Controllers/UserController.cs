@@ -11,7 +11,7 @@ using LoginAndRegistrationCore.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Reflection.Metadata.Ecma335;
 
-//!Added for session check
+//Added for session check
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace LoginAndRegistrationCore.Controllers;
@@ -63,9 +63,7 @@ public class UserController : Controller
         HttpContext.Session.SetInt32("UUID", newUser.UserId);
 
 
-        //! return RedirectToAction("Index", "User");
         return RedirectToAction("Success", "User");
-        // return RedirectToAction("Success");
     }
 //  Login method ================================================
     [HttpPost("/login")]
@@ -94,9 +92,8 @@ public class UserController : Controller
 
         //Handle success
         HttpContext.Session.SetInt32("UUID", userInDb.UserId);
-        //! return RedirectToAction("Index", "User");
+
         return RedirectToAction("Success", "User");
-        // return RedirectToAction("Success");
     }
 
 
@@ -126,7 +123,7 @@ public IActionResult Logout()
     }
 }
 
-//!Added - SESSION CHECK ===========================================
+//Added - SESSION CHECK ===========================================
 // Name this anything you want with the word "Attribute" at the end -- adding filter for session at top*
 public class SessionCheckAttribute : ActionFilterAttribute
 {
