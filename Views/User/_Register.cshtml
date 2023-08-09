@@ -1,0 +1,45 @@
+@* This is a Partial *@
+
+@model User
+
+@*ERRORS HERE*@
+<div class="container w-100 mx-auto">
+    <h1>Register</h1>
+    <form asp-action="Register" asp-controller="User" method="post" class="shadow p-3 rounded">
+        @* section *@
+        <div class="mb-3 d-flex">
+            <label asp-for="FirstName" class="me-3">First Name:</label>
+            <input asp-for="FirstName" type="text" class="form-control"/>
+            <span asp-validation-for="FirstName" class="text-danger font-weight-bold"></span>
+        </div>
+        @* section *@
+        <div class="mb-3 d-flex">
+            <label asp-for="LastName" class="me-3">Last Name:</label>
+            <input asp-for="LastName" type="text" class="form-control"/>
+            <span asp-validation-for="LastName" class="text-danger font-weight-bold"></span>
+        </div>
+        @* section *@
+        <div class="mb-3 d-flex">
+            <label asp-for="Email" class="me-3">Email:</label>
+            <input asp-for="Email" type="text" class="form-control"/>
+            <span asp-validation-for="Email" class="text-danger font-weight-bold"></span>
+        </div>
+        @* section *@
+        <div class="mb-3 d-flex">
+            <label asp-for="Password" class="me-3">Password:</label>
+            <input asp-for="Password" type="password" class="form-control"/>
+            <span asp-validation-for="Password" class="text-danger font-weight-bold"></span>
+        </div>
+        @* section *@
+        <div class="mb-3 d-flex">
+            <label asp-for="PasswordConfirm" class="me-3">PW Confirm:</label>
+            <input asp-for="PasswordConfirm" type="password" class="form-control"/>
+            <span asp-validation-for="PasswordConfirm" class="text-danger font-weight-bold"></span>
+        </div>
+    <button class="btn btn-outline-dark">Submit</button>
+
+    </form>
+
+
+</div>
+

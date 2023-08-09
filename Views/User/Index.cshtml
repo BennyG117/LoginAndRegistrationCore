@@ -1,0 +1,14 @@
+@* CREATING A PARTIAL *@
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md">
+            @* Register Partial *@
+            @await Html.PartialAsync("_Register")
+        </div>
+        <div class="col-md">
+            @*Login Partial*@
+            @await Html.PartialAsync("_Login")
+        </div>
+    </div>
+</div>
